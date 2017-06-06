@@ -22,7 +22,7 @@ class SetupController: UIViewController, UITextFieldDelegate {
         
         Onboarding.isActive = true
                 
-        keyIcon.FAIcon = FAType.FAKey
+        keyIcon.text = ""
         
         do {
             let km = try KeyManager.sharedInstance()

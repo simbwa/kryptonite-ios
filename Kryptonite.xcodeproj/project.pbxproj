@@ -102,7 +102,6 @@
 		FA16828E1D77811900A7ED53 /* IGHashFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1682861D77811900A7ED53 /* IGHashFunctions.m */; };
 		FA16828F1D77811900A7ED53 /* IGImageGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1682891D77811900A7ED53 /* IGImageGenerator.m */; settings = {COMPILER_FLAGS = "-Wno-objc-designated-initializers"; }; };
 		FA1682901D77811900A7ED53 /* IGSimpleIdenticon.m in Sources */ = {isa = PBXBuildFile; fileRef = FA16828C1D77811900A7ED53 /* IGSimpleIdenticon.m */; };
-		FA1682931D77868D00A7ED53 /* FAIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1682911D77868D00A7ED53 /* FAIcon.swift */; };
 		FA16829F1EB2B2B200D9CE40 /* KnownHostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA16829E1EB2B2B200D9CE40 /* KnownHostManager.swift */; };
 		FA1682A01EB2B2B200D9CE40 /* KnownHostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA16829E1EB2B2B200D9CE40 /* KnownHostManager.swift */; };
 		FA1682A11EB2B2B200D9CE40 /* KnownHostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA16829E1EB2B2B200D9CE40 /* KnownHostManager.swift */; };
@@ -257,7 +256,6 @@
 		FABA4B1B1D9C68F30057A666 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FABA4B1A1D9C68F30057A666 /* LocalAuthentication.framework */; };
 		FABFE3621DC1097B0073C0EF /* PairApproveController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABFE3611DC1097B0073C0EF /* PairApproveController.swift */; };
 		FAC07FCC1E42F5D100FEF117 /* Notify.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC07FCB1E42F5D100FEF117 /* Notify.swift */; };
-		FAC561191E6F60AE00150FB2 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA1682921D77868D00A7ED53 /* FontAwesome.ttf */; };
 		FAC5613E1E6F678500150FB2 /* AwesomeCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC561371E6F677000150FB2 /* AwesomeCache.framework */; };
 		FAC5613F1E6F678500150FB2 /* AwesomeCache.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FAC561371E6F677000150FB2 /* AwesomeCache.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FAC873F61E6A4D32003D112E /* PairingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC873F51E6A4D32003D112E /* PairingTests.swift */; };
@@ -618,8 +616,6 @@
 		FA16828A1EB2A8FE00D9CE40 /* KnownHosts.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KnownHosts.xcdatamodel; sourceTree = "<group>"; };
 		FA16828B1D77811900A7ED53 /* IGSimpleIdenticon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGSimpleIdenticon.h; sourceTree = "<group>"; };
 		FA16828C1D77811900A7ED53 /* IGSimpleIdenticon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGSimpleIdenticon.m; sourceTree = "<group>"; };
-		FA1682911D77868D00A7ED53 /* FAIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAIcon.swift; sourceTree = "<group>"; };
-		FA1682921D77868D00A7ED53 /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome.ttf; path = ../FontAwesome.ttf; sourceTree = "<group>"; };
 		FA16829E1EB2B2B200D9CE40 /* KnownHostManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnownHostManager.swift; sourceTree = "<group>"; };
 		FA1682A21EB2B2D500D9CE40 /* KnownHost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnownHost.swift; sourceTree = "<group>"; };
 		FA1682A71EB2C51C00D9CE40 /* KnownHosts.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KnownHosts.xcdatamodel; sourceTree = "<group>"; };
@@ -897,7 +893,6 @@
 			isa = PBXGroup;
 			children = (
 				FAE495721DBD89F000A97708 /* M13Checkbox */,
-				FA1682951D77869100A7ED53 /* FontAwesome */,
 				FA1682821D77811900A7ED53 /* IGIdenticon */,
 				FA1682531D774D6000A7ED53 /* RSBarCodes */,
 				FA61EF451D8319ED009FD899 /* Mutex.swift */,
@@ -956,15 +951,6 @@
 				FA16828C1D77811900A7ED53 /* IGSimpleIdenticon.m */,
 			);
 			path = IGIdenticon;
-			sourceTree = "<group>";
-		};
-		FA1682951D77869100A7ED53 /* FontAwesome */ = {
-			isa = PBXGroup;
-			children = (
-				FA1682911D77868D00A7ED53 /* FAIcon.swift */,
-				FA1682921D77868D00A7ED53 /* FontAwesome.ttf */,
-			);
-			name = FontAwesome;
 			sourceTree = "<group>";
 		};
 		FA29779A1D773A2F003EB1F7 /* Controllers */ = {
@@ -1435,6 +1421,7 @@
 					FA49F7841D9B6B3200372556 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = W7AMYM5LPN;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -1448,7 +1435,7 @@
 					FA8141351D70B0F4004FE58C = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = W7AMYM5LPN;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0900;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -1472,12 +1459,13 @@
 					};
 					FAEE04991D74BCC3002A7AFD = {
 						CreatedOnToolsVersion = 7.3.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0900;
 						TestTargetID = FA8141351D70B0F4004FE58C;
 					};
 					FAF1E61E1E031BB9003CBEA2 = {
 						CreatedOnToolsVersion = 8.2;
 						DevelopmentTeam = W7AMYM5LPN;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -1494,6 +1482,7 @@
 					FAFF1E861ED6816B0063C44C = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = W7AMYM5LPN;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -1706,7 +1695,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA03C5991E760CD50019649E /* BUILD in Resources */,
-				FAC561191E6F60AE00150FB2 /* FontAwesome.ttf in Resources */,
 				FA632E461DB563E0003F3A3B /* SourceCodePro-Regular.ttf in Resources */,
 				FA2977991D7736A8003EB1F7 /* ImageLicenses in Resources */,
 				FAE4959B1DBD98C400A97708 /* Approval.storyboard in Resources */,
@@ -2066,7 +2054,6 @@
 				FA16827B1D774D6000A7ED53 /* UIColorExtension.swift in Sources */,
 				FA1682761D774D6000A7ED53 /* RSITFGenerator.swift in Sources */,
 				FA6491121ED38314008C04A7 /* AutoApproveController.swift in Sources */,
-				FA1682931D77868D00A7ED53 /* FAIcon.swift in Sources */,
 				FACAA4BC1D888AB9000B9A01 /* SessionDetailController.swift in Sources */,
 				FAE4958E1DBD89F100A97708 /* M13CheckboxExpandController.swift in Sources */,
 				FAA6E1FE1D7A028F007D1B3A /* Pairing.swift in Sources */,
@@ -2357,7 +2344,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -2376,7 +2364,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = co.krypt.kryptonite.last;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -2501,7 +2490,8 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_INCLUDE_PATHS = "CommonCrytpo/**";
 				SWIFT_OBJC_BRIDGING_HEADER = "Kryptonite/Kryptonite-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -2539,7 +2529,8 @@
 				SWIFT_INCLUDE_PATHS = "CommonCrytpo/**";
 				SWIFT_OBJC_BRIDGING_HEADER = "Kryptonite/Kryptonite-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -2563,7 +2554,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = co.krypt.KryptoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "KryptoTests/Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kryptonite.app/Kryptonite";
 			};
 			name = Debug;
@@ -2587,7 +2579,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = co.krypt.KryptoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "KryptoTests/Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kryptonite.app/Kryptonite";
 			};
 			name = Release;
@@ -2619,7 +2612,8 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OBJC_BRIDGING_HEADER = "Notify/Notify-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -2649,7 +2643,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Notify/Notify-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -2674,7 +2669,8 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OBJC_BRIDGING_HEADER = "NotifyUI/NotifyUI-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -2698,7 +2694,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "NotifyUI/NotifyUI-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

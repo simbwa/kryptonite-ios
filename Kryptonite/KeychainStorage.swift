@@ -8,8 +8,6 @@
 
 import Foundation
 
-private let KrKeychainServiceName = "kr_keychain_service"
-
 enum KeychainStorageError:Error {
     case notFound
     case saveError(OSStatus?)
@@ -19,9 +17,11 @@ enum KeychainStorageError:Error {
 
 class KeychainStorage {
     
+    static let service = "kr_keychain_service"
+    
     var service:String
     
-    init(service:String = KrKeychainServiceName) {
+    init(service:String = KeychainStorage.service) {
         self.service = service
     }
     
@@ -47,12 +47,12 @@ class KeychainStorage {
     }
     
     func getData(key:String) throws -> Data {
-        let params = [String(kSecClass): kSecClassGenericPassword,
-                      String(kSecAttrService): service,
-                      String(kSecAttrAccount): key,
-                      String(kSecReturnData): kCFBooleanTrue,
-                      String(kSecMatchLimit): kSecMatchLimitOne,
-                      String(kSecAttrAccessible): KeychainAccessiblity] as [String : Any]
+        let params:[String : Any] = [String(kSecClass): kSecClassGenericPassword,
+                                     String(kSecAttrService): service,
+                                     String(kSecAttrAccount): key,
+                                     String(kSecReturnData): kCFBooleanTrue,
+                                     String(kSecMatchLimit): kSecMatchLimitOne,
+                                     String(kSecAttrAccessible): KeychainAccessiblity]
         
         var object:AnyObject?
         let status = SecItemCopyMatching(params as CFDictionary, &object)

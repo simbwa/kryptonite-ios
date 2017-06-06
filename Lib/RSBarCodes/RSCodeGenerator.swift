@@ -135,7 +135,11 @@ public class RSAbstractCodeGenerator : RSCodeGenerator {
     // RSCodeGenerator
     
     public func generateCode(_ machineReadableCodeObject:AVMetadataMachineReadableCodeObject, inputCorrectionLevel: InputCorrectionLevel) -> UIImage? {
-        return self.generateCode(machineReadableCodeObject.stringValue, inputCorrectionLevel: inputCorrectionLevel, machineReadableCodeObjectType: machineReadableCodeObject.type)
+        
+        guard let objectString = machineReadableCodeObject.stringValue else {
+            return nil
+        }
+        return self.generateCode(objectString, inputCorrectionLevel: inputCorrectionLevel, machineReadableCodeObjectType: machineReadableCodeObject.type.rawValue)
     }
     
     public func generateCode(_ machineReadableCodeObject:AVMetadataMachineReadableCodeObject) -> UIImage? {
@@ -157,15 +161,19 @@ public class RSAbstractCodeGenerator : RSCodeGenerator {
     
     // Get CIFilter name by machine readable code object type
     public class func filterName(_ machineReadableCodeObjectType:String) -> String! {
-        if machineReadableCodeObjectType == AVMetadataObjectTypeQRCode {
+        
+        let objectType = AVMetadataObject.ObjectType(rawValue: machineReadableCodeObjectType)
+        
+        switch objectType {
+        case .qr:
             return "CIQRCodeGenerator"
-        } else if machineReadableCodeObjectType == AVMetadataObjectTypePDF417Code {
+        case .pdf417:
             return "CIPDF417BarcodeGenerator"
-        } else if machineReadableCodeObjectType == AVMetadataObjectTypeAztecCode {
+        case .aztec:
             return "CIAztecCodeGenerator"
-        } else if machineReadableCodeObjectType == AVMetadataObjectTypeCode128Code {
+        case .code128:
             return "CICode128BarcodeGenerator"
-        } else {
+        default:
             return ""
         }
     }

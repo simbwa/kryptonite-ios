@@ -49,12 +49,11 @@ class RSAKeyPair:KeyPair {
         // get the private key
         let privTag = KeyIdentifier.Private.tag(tag)
         
-        var params = [String(kSecReturnRef): kCFBooleanTrue,
-                      String(kSecClass): kSecClassKey,
-                      String(kSecAttrKeyType): kSecAttrKeyTypeRSA,
-                      String(kSecAttrApplicationTag): privTag,
-                      String(kSecAttrAccessible):KeychainAccessiblity,
-                      ] as [String : Any]
+        var params:[String:Any] = [String(kSecReturnRef): kCFBooleanTrue,
+                                   String(kSecClass): kSecClassKey,
+                                   String(kSecAttrKeyType): kSecAttrKeyTypeRSA,
+                                   String(kSecAttrApplicationTag): privTag,
+                                   String(kSecAttrAccessible):KeychainAccessiblity]
         
         
         var privKeyObject:AnyObject?
@@ -77,7 +76,7 @@ class RSAKeyPair:KeyPair {
                   String(kSecAttrKeyType): kSecAttrKeyTypeRSA,
                   String(kSecAttrApplicationTag): pubTag,
                   String(kSecAttrAccessible):KeychainAccessiblity,
-                  ] as [String : Any]
+                  ]
         
         var pubKeyObject:AnyObject?
         status = SecItemCopyMatching(params as CFDictionary, &pubKeyObject)
@@ -120,12 +119,11 @@ class RSAKeyPair:KeyPair {
         // save public key ref
         
         let pubTag = KeyIdentifier.Public.tag(tag)
-        var pubParams = [String(kSecReturnRef): kCFBooleanTrue,
-                         String(kSecClass): kSecClassKey,
-                         String(kSecAttrKeyType): kSecAttrKeyTypeRSA,
-                         String(kSecAttrApplicationTag): pubTag,
-                         String(kSecAttrAccessible):KeychainAccessiblity,
-                         ] as [String : Any]
+        var pubParams:[String:Any] = [String(kSecReturnRef): kCFBooleanTrue,
+                                     String(kSecClass): kSecClassKey,
+                                     String(kSecAttrKeyType): kSecAttrKeyTypeRSA,
+                                     String(kSecAttrApplicationTag): pubTag,
+                                     String(kSecAttrAccessible):KeychainAccessiblity]
         
         pubParams[String(kSecAttrKeyClass)] = kSecAttrKeyClassPublic
         pubParams[String(kSecValueRef)] = pub
@@ -160,10 +158,10 @@ class RSAKeyPair:KeyPair {
         // delete the public key
         let pubTag = KeyIdentifier.Public.tag(tag)
         
-        var params = [String(kSecClass): kSecClassKey,
-                      String(kSecAttrApplicationTag): pubTag,
-                      String(kSecAttrKeyType): kSecAttrKeyTypeRSA,
-                      String(kSecAttrAccessible): KeychainAccessiblity] as [String : Any]
+        var params:[String:Any] = [String(kSecClass): kSecClassKey,
+                                   String(kSecAttrApplicationTag): pubTag,
+                                   String(kSecAttrKeyType): kSecAttrKeyTypeRSA,
+                                   String(kSecAttrAccessible): KeychainAccessiblity]
         
         params[String(kSecAttrKeyClass)] = kSecAttrKeyClassPublic
         params[String(kSecAttrIsPermanent)] = kCFBooleanTrue
@@ -189,12 +187,11 @@ class RSAKeyPair:KeyPair {
         // delete the private key
         let privTag = KeyIdentifier.Private.tag(tag)
         
-        let params = [String(kSecReturnRef): kCFBooleanTrue,
-                      String(kSecClass): kSecClassKey,
-                      String(kSecAttrKeyType): kSecAttrKeyTypeRSA,
-                      String(kSecAttrApplicationTag): privTag,
-                      String(kSecAttrAccessible):KeychainAccessiblity,
-                      ] as [String : Any]
+        let params:[String:Any] = [String(kSecReturnRef): kCFBooleanTrue,
+                                  String(kSecClass): kSecClassKey,
+                                  String(kSecAttrKeyType): kSecAttrKeyTypeRSA,
+                                  String(kSecAttrApplicationTag): privTag,
+                                  String(kSecAttrAccessible):KeychainAccessiblity]
         
         
         let status = SecItemDelete(params as CFDictionary)
@@ -318,9 +315,9 @@ struct RSAPublicKey:PublicKey {
     
     func export() throws -> Data {
         
-        var params = [String(kSecReturnData): kCFBooleanTrue,
-                      String(kSecClass): kSecClassKey,
-                      String(kSecValueRef): key] as [String : Any]
+        var params:[String:Any] = [String(kSecReturnData): kCFBooleanTrue,
+                                   String(kSecClass): kSecClassKey,
+                                   String(kSecValueRef): key]
         
         var publicKeyObject:AnyObject?
         var status = SecItemCopyMatching(params as CFDictionary, &publicKeyObject)
@@ -348,10 +345,10 @@ struct RSAPublicKey:PublicKey {
         
         let pubTag = KeyIdentifier.Public.tag(tag)
         
-        var params = [String(kSecClass): kSecClassKey,
-                      String(kSecAttrApplicationTag): pubTag,
-                      String(kSecAttrKeyType): kSecAttrKeyTypeRSA,
-                      String(kSecAttrAccessible): KeychainAccessiblity] as [String : Any]
+        var params:[String:Any] = [String(kSecClass): kSecClassKey,
+                                   String(kSecAttrApplicationTag): pubTag,
+                                   String(kSecAttrKeyType): kSecAttrKeyTypeRSA,
+                                   String(kSecAttrAccessible): KeychainAccessiblity]
         
         params[String(kSecAttrKeyClass)] = kSecAttrKeyClassPublic
         params[String(kSecValueData)] = publicKeyRaw

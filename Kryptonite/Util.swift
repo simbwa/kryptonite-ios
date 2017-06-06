@@ -147,7 +147,7 @@ extension OSStatus {
 extension Data {
     func bigEndianByteSize() -> [UInt8] {
         return stride(from: 24, through: 0, by: -8).map {
-            UInt8(truncatingBitPattern: UInt32(self.count).littleEndian >> UInt32($0))
+            UInt8(extendingOrTruncating: UInt32(self.count).littleEndian >> UInt32($0))
         }
     }
 }
