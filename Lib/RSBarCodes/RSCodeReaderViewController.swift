@@ -178,12 +178,12 @@ open class RSCodeReaderViewController: UIViewController, AVCaptureMetadataOutput
     
     override open func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-                
+        
         if let videoPreviewLayer = self.videoPreviewLayer {
             let videoOrientation = RSCodeReaderViewController.interfaceOrientationToVideoOrientation(UIApplication.shared.statusBarOrientation)
             if videoPreviewLayer.connection?.isVideoOrientationSupported == true
                 && videoPreviewLayer.connection?.videoOrientation != videoOrientation {
-                    videoPreviewLayer.connection?.videoOrientation = videoOrientation
+                videoPreviewLayer.connection?.videoOrientation = videoOrientation
             }
             videoPreviewLayer.frame = self.view.bounds
         }
@@ -205,11 +205,10 @@ open class RSCodeReaderViewController: UIViewController, AVCaptureMetadataOutput
         
         self.view.backgroundColor = UIColor.clear
         
-        
         if let device = self.device {
+            
             var error : NSError?
             let input: AVCaptureDeviceInput!
-            
             do {
                 input = try AVCaptureDeviceInput(device: device)
             } catch let error1 as NSError {
@@ -220,6 +219,7 @@ open class RSCodeReaderViewController: UIViewController, AVCaptureMetadataOutput
                 print(error.description)
                 return
             }
+            
             
             do {
                 try device.lockForConfiguration()
@@ -236,6 +236,7 @@ open class RSCodeReaderViewController: UIViewController, AVCaptureMetadataOutput
             if self.session.canAddInput(input) {
                 self.session.addInput(input)
             }
+
         }
         
         
@@ -261,7 +262,7 @@ open class RSCodeReaderViewController: UIViewController, AVCaptureMetadataOutput
         
         self.cornersLayer.frame = self.view.bounds
         self.view.layer.addSublayer(self.cornersLayer)
-
+        
     }
     
     override open func viewWillAppear(_ animated: Bool) {
@@ -286,9 +287,42 @@ open class RSCodeReaderViewController: UIViewController, AVCaptureMetadataOutput
         self.session.stopRunning()
     }
     
+    public func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
+        
+        var barcodeObjects = [AVMetadataMachineReadableCodeObject]()
+        var cornersArray = [[AnyObject]]()
+        
+        for metadataObject in metadataObjects {
+            guard   let videoPreviewLayer = self.videoPreviewLayer,
+                    let  barcodeObject = videoPreviewLayer.transformedMetadataObject(for: metadataObject) as? AVMetadataMachineReadableCodeObject
+            else {
+                continue
+            }
+            
+            barcodeObjects.append(barcodeObject)
+            cornersArray.append(barcodeObject.corners as [AnyObject])
+        }
+        
+        self.cornersLayer.cornersArray = cornersArray
+        
+        if barcodeObjects.count > 0 {
+            if let barcodesHandler = self.barcodesHandler {
+                barcodesHandler(barcodeObjects)
+            }
+        }
+        
+        DispatchQueue.main.async(execute: { () -> Void in
+            if let ticker = self.ticker {
+                ticker.invalidate()
+            }
+            self.ticker = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(RSCodeReaderViewController.onTick), userInfo: nil, repeats: true)
+        })
+        
+        
+    }
+    
     // MARK: AVCaptureMetadataOutputObjectsDelegate
     public func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
-        
         var barcodeObjects : Array<AVMetadataMachineReadableCodeObject> = []
         var cornersArray : Array<[AnyObject]> = []
         for metadataObject : AnyObject in metadataObjects as [AnyObject]! {

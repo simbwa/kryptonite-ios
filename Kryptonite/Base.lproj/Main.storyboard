@@ -1014,7 +1014,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Uxw-jY-Pon"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="9D7-bC-78B">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="550"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -3149,14 +3149,14 @@ Cg
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H93-E0-eT6" customClass="KRView" customModule="Kryptonite" customModuleProvider="target">
                                 <rect key="frame" x="20" y="258.5" width="335" height="40"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kxf-FQ-Kpm">
-                                        <rect key="frame" x="10" y="10" width="14.5" height="20"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="$ " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kxf-FQ-Kpm">
+                                        <rect key="frame" x="10" y="10" width="20.5" height="20"/>
                                         <fontDescription key="fontDescription" name="SourceCodePro-Regular" family="Source Code Pro" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="ssh me.krypt.co" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GSq-Io-jBk">
-                                        <rect key="frame" x="32.5" y="10" width="282.5" height="20"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" ambiguous="YES" text="ssh me.krypt.co" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GSq-Io-jBk">
+                                        <rect key="frame" x="38.5" y="10" width="276.5" height="20"/>
                                         <fontDescription key="fontDescription" name="SourceCodePro-Bold" family="Source Code Pro" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -3786,7 +3786,7 @@ Cg
                     <navigationItem key="navigationItem" title="Known Hosts" id="dyo-mb-YXT">
                         <barButtonItem key="leftBarButtonItem" id="gdJ-dS-A8a">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xl7-rS-uY5">
-                                <rect key="frame" x="16" y="6" width="38" height="36"/>
+                                <rect key="frame" x="16" y="4" width="38" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                 <color key="tintColor" red="0.35686274509999999" green="0.7843137255" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -3980,14 +3980,14 @@ Cg
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eEE-NW-20Z" customClass="KRView" customModule="Kryptonite" customModuleProvider="target">
                                         <rect key="frame" x="20" y="21" width="335" height="59"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGJ-lB-iTU">
-                                                <rect key="frame" x="10" y="28" width="15.5" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="$ " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGJ-lB-iTU">
+                                                <rect key="frame" x="10" y="28" width="22" height="21"/>
                                                 <fontDescription key="fontDescription" name="SourceCodePro-Regular" family="Source Code Pro" pointSize="18"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="kr me" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0j6-Ck-408">
-                                                <rect key="frame" x="33.5" y="28" width="281.5" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" ambiguous="YES" text="kr me" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0j6-Ck-408">
+                                                <rect key="frame" x="40" y="28" width="275" height="21"/>
                                                 <fontDescription key="fontDescription" name="SourceCodePro-Bold" family="Source Code Pro" pointSize="18"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -4020,14 +4020,14 @@ Cg
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iUN-2V-sar" customClass="KRView" customModule="Kryptonite" customModuleProvider="target">
                                         <rect key="frame" x="20" y="100" width="335" height="59"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="$ " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6qI-xQ-UFF">
-                                                <rect key="frame" x="10" y="28" width="22" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6qI-xQ-UFF">
+                                                <rect key="frame" x="10" y="28" width="15.5" height="21"/>
                                                 <fontDescription key="fontDescription" name="SourceCodePro-Regular" family="Source Code Pro" pointSize="18"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" ambiguous="YES" text="kr github" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="brY-1m-Edf">
-                                                <rect key="frame" x="40" y="28" width="275" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="kr github" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="brY-1m-Edf">
+                                                <rect key="frame" x="33.5" y="28" width="281.5" height="21"/>
                                                 <fontDescription key="fontDescription" name="SourceCodePro-Bold" family="Source Code Pro" pointSize="18"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
