@@ -38,6 +38,7 @@ class KRBaseController: UIViewController {
     }
     
     var connectivity:Connectivity?
+    var linkListener:LinkListener?
     
     //MARK: Policy
     override func viewWillAppear(_ animated: Bool) {
@@ -55,11 +56,13 @@ class KRBaseController: UIViewController {
 
         checkForUpdatesIfNeeded()
         connectivity = Connectivity(presenter: self)
+        linkListener = LinkListener(self.onListen)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         connectivity = nil
+        linkListener = nil
     }
 
     func shouldPostAnalytics() -> Bool {
@@ -69,6 +72,10 @@ class KRBaseController: UIViewController {
 
 class KRBaseTableController: UITableViewController {
     
+    var connectivity:Connectivity?
+    var linkListener:LinkListener?
+
+    
     //MARK: Policy
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -81,18 +88,19 @@ class KRBaseTableController: UITableViewController {
         checkIfPushEnabled()
     }
     
-    var connectivity:Connectivity?
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
         checkForUpdatesIfNeeded()
         connectivity = Connectivity(presenter: self)
+        linkListener = LinkListener(self.onListen)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         connectivity = nil
+        linkListener = nil
     }
 
     func shouldPostAnalytics() -> Bool {
@@ -146,5 +154,51 @@ extension UIViewController {
         }
     }
     
+    
+    //MARK: React to links
+    func onListen(link:Link) {
+        guard link.type == .kr else {
+            log("invalid link type presented: \(link.type)")
+            return
+        }
+        
+        
+        switch link.command {
+        case .joinTeam:
+            
+            guard   link.path.count == 2,
+                    let teamName = link.properties["team"],
+                    let email = link.properties["email"]
+            else {
+                self.showWarning(title: "Error", body: "Invalid team invitation.")
+                return
+            }
+            
+            var teamInvite:TeamInvite
+            do {
+                let teamPublicKey = try SodiumPublicKey(link.path[0].fromBase64())
+                let inviteCode = try link.path[1].fromBase64()
+                teamInvite = TeamInvite(team: Team(name: teamName, publicKey: teamPublicKey), email: email, code: inviteCode)
+            } catch {
+                self.showWarning(title: "Error", body: "Invalid team invitation encoding.")
+                return
+            }
+            
+
+            guard let teamInviteController = Resources.Storyboard.Team.instantiateViewController(withIdentifier: "TeamInvitationController") as? TeamInvitationController
+            else {
+                log("unknown team invitiation controller")
+                return
+            }
+            
+            teamInviteController.invite = teamInvite
+            
+            dispatchMain {
+                self.present(teamInviteController, animated: true, completion: nil)
+            }
+            
+        }
+    }
+
    
 }
