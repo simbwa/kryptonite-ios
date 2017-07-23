@@ -249,7 +249,7 @@
         <!--Session Detail Controller-->
         <scene sceneID="Jb8-M5-3lO">
             <objects>
-                <tableViewController id="2XW-PV-xjB" customClass="SessionDetailController" customModule="Kryptonite" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SessionDetailController" id="2XW-PV-xjB" customClass="SessionDetailController" customModule="Kryptonite" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="80" sectionHeaderHeight="1" sectionFooterHeight="18" id="5nw-7h-nCq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1061,7 +1061,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5RS-2j-zVj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3872.8000000000002" y="1163.568215892054"/>
+            <point key="canvasLocation" x="3804" y="1070"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Atm-Dh-fQZ">
@@ -4442,16 +4442,16 @@ Cg
                         <constraints>
                             <constraint firstItem="BZI-tN-Cgy" firstAttribute="leading" secondItem="1nD-98-eKf" secondAttribute="leading" id="07o-FS-ox3"/>
                             <constraint firstItem="M9f-ul-jyX" firstAttribute="leading" secondItem="1nD-98-eKf" secondAttribute="leading" id="M7M-yL-wV9"/>
-                            <constraint firstItem="aKk-ID-Wah" firstAttribute="top" secondItem="M9f-ul-jyX" secondAttribute="bottom" id="PLl-Gq-LHl"/>
                             <constraint firstItem="BZI-tN-Cgy" firstAttribute="top" secondItem="1nD-98-eKf" secondAttribute="top" id="Q7u-lI-6m3"/>
                             <constraint firstItem="8lm-Ye-OGM" firstAttribute="leading" secondItem="1nD-98-eKf" secondAttribute="leading" id="Uak-SV-jor"/>
+                            <constraint firstItem="aKk-ID-Wah" firstAttribute="top" secondItem="M9f-ul-jyX" secondAttribute="bottom" id="VG0-Gn-6Fd"/>
                             <constraint firstItem="8lm-Ye-OGM" firstAttribute="top" secondItem="BZI-tN-Cgy" secondAttribute="bottom" id="aW3-MT-I4J"/>
                             <constraint firstAttribute="trailing" secondItem="BZI-tN-Cgy" secondAttribute="trailing" id="c2u-us-Zy9"/>
                             <constraint firstAttribute="bottom" secondItem="8lm-Ye-OGM" secondAttribute="bottom" id="fkh-3K-NaJ"/>
-                            <constraint firstItem="M9f-ul-jyX" firstAttribute="top" secondItem="mRE-ow-Lhg" secondAttribute="bottom" id="fxO-gq-Ylc"/>
                             <constraint firstAttribute="trailing" secondItem="M9f-ul-jyX" secondAttribute="trailing" id="iiq-Vx-VpI"/>
                             <constraint firstAttribute="trailing" secondItem="8lm-Ye-OGM" secondAttribute="trailing" id="jIu-mO-DMO"/>
-                            <constraint firstItem="rrc-CV-gf3" firstAttribute="top" secondItem="mRE-ow-Lhg" secondAttribute="bottom" constant="20" id="sCA-HK-Op5"/>
+                            <constraint firstItem="M9f-ul-jyX" firstAttribute="top" secondItem="mRE-ow-Lhg" secondAttribute="bottom" id="qqr-2A-3e6"/>
+                            <constraint firstItem="rrc-CV-gf3" firstAttribute="top" secondItem="mRE-ow-Lhg" secondAttribute="bottom" constant="20" id="xqy-xK-H0S"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Me" image="me" selectedImage="me_selected" id="mV9-63-qvt"/>
@@ -4955,8 +4955,8 @@ Let's upgrade and pair.</string>
         <image name="trash" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="0pJ-4c-RGj"/>
         <segue reference="Y5o-pc-uUx"/>
-        <segue reference="nqH-Dq-7fH"/>
         <segue reference="kMu-oa-2FM"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.1215686275" green="0.69411764710000001" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
