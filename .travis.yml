@@ -1,0 +1,4 @@
+language: swift
+xcode_project: Kryptonite.xcodeproj
+xcode_scheme: Debug
+osx_image: xcode8.3
