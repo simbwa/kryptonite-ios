@@ -1,4 +1,9 @@
 language: swift
+git:
+    submodules: false
+before_install:
+    - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
+    - git submodule update --init --recursive
 before_script:
   - curl https://sh.rustup.rs -sSf | sh -s -- -y
   - export PATH=$PATH:$HOME/.cargo/bin/
