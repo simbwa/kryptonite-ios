@@ -19,3 +19,5 @@ before_script:
   - rustup update
   - cargo install cargo-lipo
 
+script:
+  - make check
