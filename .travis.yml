@@ -20,4 +20,4 @@ before_script:
   - cargo install cargo-lipo
 
 script:
-  - make check
+  - make check 2>/dev/null 1>/dev/null
