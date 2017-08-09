@@ -1,4 +1,14 @@
 language: swift
+before_script:
+  - curl https://sh.rustup.rs -sSf | sh -s -- -y
+  - export PATH=$PATH:$HOME/.cargo/bin/
+  - rustup target add aarch64-apple-ios
+  - rustup target add armv7-apple-ios
+  - rustup target add armv7s-apple-ios
+  - rustup target add x86_64-apple-ios
+  - rustup target add i386-apple-ios
+  - rustup update
+  - cargo install cargo-lipo
 xcode_project: Kryptonite.xcodeproj
 xcode_scheme: Debug
 osx_image: xcode8.3
