@@ -4,8 +4,8 @@ xcode_scheme: Debug
 osx_image: xcode8.3
 git:
     submodules: false
-install:
-  - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
+before_install:
+  - sed -i '' -e 's/git@github.com:/https:\/\/github.com\//' .gitmodules
   - git submodule update --init --recursive
 
 before_script:
