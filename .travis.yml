@@ -19,9 +19,4 @@ before_script:
   - cargo install cargo-lipo
   - sudo gem install xcpretty
 script:
-  - make check 2>/dev/null 1>/dev/null
-cache:
-  directories:
-    - /usr/local/bin/
-    - $HOME/.rustup/
-    - $HOME/.cargo/
+  - make check
