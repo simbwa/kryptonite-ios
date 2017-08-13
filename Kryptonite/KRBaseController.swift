@@ -203,7 +203,7 @@ extension UIViewController {
                 return
             }
             
-            teamLoadController.invite = teamInvite
+            teamLoadController.joinType = .invite(teamInvite)
             
             dispatchMain {
                 self.present(teamLoadController, animated: true, completion: nil)
