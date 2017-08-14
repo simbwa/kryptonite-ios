@@ -83,6 +83,7 @@ extension UIViewController {
                     self.present(approvalController, animated: true, completion: nil)
                 })
             } else {
+                log("presenting \(approvalController)", .warning)
                 self.present(approvalController, animated: true, completion: nil)
             }
         }

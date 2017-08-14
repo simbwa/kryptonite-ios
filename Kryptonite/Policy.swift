@@ -131,8 +131,11 @@ class Policy {
             {
                 return true
             }
+        
+        case .createTeam:
+            return true
             
-        case .createTeam, .git, .me, .noOp, .unpair:
+        case .git, .me, .noOp, .unpair:
             break
         }
         

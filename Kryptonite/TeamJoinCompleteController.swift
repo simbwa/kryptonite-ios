@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class TeamJoinCompleteController:KRBaseController {
+class TeamJoinCompleteController:UIViewController {
     
     @IBOutlet weak var checkBox:M13Checkbox!
     @IBOutlet weak var arcView:UIView!

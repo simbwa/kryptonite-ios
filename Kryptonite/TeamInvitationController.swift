@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class TeamInvitationController:KRBaseController, UITextFieldDelegate {
+class TeamInvitationController:UIViewController, UITextFieldDelegate {
     
     var joinType:TeamJoinType!
     var teamIdentity:TeamIdentity!

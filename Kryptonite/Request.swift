@@ -59,9 +59,9 @@ enum RequestBody:Jsonable {
     
     var isApprovable:Bool {
         switch self {
-        case .ssh, .git:
+        case .ssh, .git, .createTeam:
             return true
-        case .createTeam, .me, .unpair, .noOp:
+        case .me, .unpair, .noOp:
             return false
         }
     }

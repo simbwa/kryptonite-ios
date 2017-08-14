@@ -109,7 +109,6 @@
                                 </state>
                                 <connections>
                                     <action selector="cancelTapped" destination="f8Q-Ha-EzC" eventType="touchUpInside" id="UPt-a1-XJU"/>
-                                    <action selector="dontJoinTapped" destination="3uq-7G-9WI" eventType="touchUpInside" id="ibV-v6-m5j"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -195,6 +194,7 @@
                                     <color key="titleColor" red="0.35686274509999999" green="0.7843137255" blue="0.58039215690000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="dontJoinTapped" destination="3uq-7G-9WI" eventType="touchUpInside" id="EfW-qO-LJv"/>
                                     <segue destination="afm-eY-zRt" kind="unwind" unwindAction="dismissJoinTeamWithSegue:" id="5TU-YN-8ZW"/>
                                 </connections>
                             </button>
