@@ -30,7 +30,7 @@ class TeamLoadController:UIViewController, UITextFieldDelegate {
         
         // ensure we don't have a team yet
         do {
-            if let teamIdentity = try KeyManager.getTeamIdentity() {
+            if let teamIdentity = try IdentityManager.getTeamIdentity() {
                 self.showWarning(title: "Already on team \(teamIdentity.team.info.name)", body: "Kryptonite only supports being on one team. Multi-team support is coming soon!")
                 {
                     self.dismiss(animated: true, completion: nil)
@@ -87,7 +87,7 @@ class TeamLoadController:UIViewController, UITextFieldDelegate {
             return
         }
         
-        let service = HashChainService(teamIdentity: teamIdentity)
+        let service = TeamService.temporary(for: teamIdentity)
         
         do {
             switch joinType! {
@@ -98,8 +98,8 @@ class TeamLoadController:UIViewController, UITextFieldDelegate {
                         self.showError(message: "Error fetching team information. Reason: \(e)")
                         return
                         
-                    case .result(let updatedTeam):
-                        teamIdentity.team = updatedTeam
+                    case .result(let service):
+                        teamIdentity.team = service.teamIdentity.team
                         
                         dispatchMain {
                             self.performSegue(withIdentifier: "showTeamInvite", sender: teamIdentity)
