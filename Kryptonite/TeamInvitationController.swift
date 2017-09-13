@@ -13,6 +13,8 @@ class TeamInvitationController:UIViewController, UITextFieldDelegate {
     
     var joinType:TeamJoinType!
     var teamIdentity:TeamIdentity!
+    var createBlock:HashChain.Block?
+
     
     @IBOutlet weak var teamNameLabel:UILabel!
     @IBOutlet weak var emailTextfield: UITextField!
@@ -126,6 +128,10 @@ class TeamInvitationController:UIViewController, UITextFieldDelegate {
         if let completeController = segue.destination as? TeamJoinCompleteController {
             completeController.joinType = joinType
             completeController.teamIdentity = teamIdentity
+            
+            if let createBlock = createBlock {
+                completeController.createBlock = createBlock
+            }
         }
     }
 }
