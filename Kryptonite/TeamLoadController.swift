@@ -47,14 +47,14 @@ class TeamLoadController:UIViewController, UITextFieldDelegate {
     func loadTeam() {
         switch joinType! {
         case .invite(let invite):
-            self.load(with: invite)
+            self.loadJoin(with: invite)
             
-        case .create(let request, _):
-            self.load(with: request)
+        case .create:
+            self.loadCreate()
         }
     }
     
-    func load(with invite:TeamInvite) {
+    func loadJoin(with invite:TeamInvite) {
         
         var teamIdentity:TeamIdentity
         do {
@@ -90,20 +90,8 @@ class TeamLoadController:UIViewController, UITextFieldDelegate {
 
     }
     
-    func load(with request:Request) {
-        guard case .createTeam(let create) = request.body else {
-            self.showError(message: "Invalid request.")
-            return
-        }
-        
-        do {
-            let (teamIdentity, createBlock) = try TeamIdentity.newAdmin(email: "", teamName: create.name)
-            self.performSegue(withIdentifier: "showTeamInvite", sender: (teamIdentity, createBlock))
-
-        } catch {
-            self.showError(message: "Could not generate team identity. Reason: \(error).")
-            return
-        }
+    func loadCreate() {
+        self.performSegue(withIdentifier: "showTeamInvite", sender: nil)
     }
     
     func showError(message:String) {
@@ -127,15 +115,7 @@ class TeamLoadController:UIViewController, UITextFieldDelegate {
         if  let teamInviteController = segue.destination as? TeamInvitationController
         {
             teamInviteController.joinType = joinType
-            
-            if let teamIdentity = sender as? TeamIdentity {
-                teamInviteController.teamIdentity = teamIdentity
-            }
-            
-            if let (teamIdentity, createBlock) = sender as? (TeamIdentity, HashChain.Block) {
-                teamInviteController.teamIdentity = teamIdentity
-                teamInviteController.createBlock = createBlock
-            }
+            teamInviteController.teamIdentity = sender as? TeamIdentity
         }
     }
     
