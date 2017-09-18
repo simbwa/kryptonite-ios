@@ -14,6 +14,9 @@ struct SodiumInitializationFailure:Error{}
 typealias SodiumPublicKey = Sign.PublicKey
 typealias SodiumKeyPair = Sign.KeyPair
 
+typealias SodiumBoxPublicKey = Box.PublicKey
+typealias SodiumBoxKeyPair = Box.KeyPair
+
 private var sharedSodium : Sodium?
 class KRSodium {
     class func shared() throws -> Sodium {
