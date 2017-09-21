@@ -28,11 +28,11 @@ class KeychainStorage {
         mutex.lock()
         defer { self.mutex.unlock() }
         
-        let params = [String(kSecClass): kSecClassGenericPassword,
+        let params:[String:Any] = [String(kSecClass): kSecClassGenericPassword,
                       String(kSecAttrService): service,
                       String(kSecAttrAccount): key,
                       String(kSecValueData): data,
-                      String(kSecAttrAccessible): KeychainAccessiblity] as [String : Any]
+                      String(kSecAttrAccessible): KeychainAccessiblity]
         
         let _ = SecItemDelete(params as CFDictionary)
         
@@ -52,12 +52,12 @@ class KeychainStorage {
         mutex.lock()
         defer { self.mutex.unlock() }
 
-        let params = [String(kSecClass): kSecClassGenericPassword,
+        let params:[String : Any] = [String(kSecClass): kSecClassGenericPassword,
                       String(kSecAttrService): service,
                       String(kSecAttrAccount): key,
                       String(kSecReturnData): kCFBooleanTrue,
                       String(kSecMatchLimit): kSecMatchLimitOne,
-                      String(kSecAttrAccessible): KeychainAccessiblity] as [String : Any]
+                      String(kSecAttrAccessible): KeychainAccessiblity]
         
         var object:AnyObject?
         let status = SecItemCopyMatching(params as CFDictionary, &object)
@@ -82,9 +82,9 @@ class KeychainStorage {
         mutex.lock()
         defer { self.mutex.unlock() }
 
-        let params = [String(kSecClass): kSecClassGenericPassword,
+        let params:[String : Any] = [String(kSecClass): kSecClassGenericPassword,
                       String(kSecAttrService): service,
-                      String(kSecAttrAccount): key] as [String : Any]
+                      String(kSecAttrAccount): key]
         
         let status = SecItemDelete(params as CFDictionary)
         
