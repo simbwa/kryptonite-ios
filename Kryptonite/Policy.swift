@@ -152,7 +152,7 @@ class Policy {
                 return true
             }
         
-        case .createTeam:
+        case .adminKey, .createTeam:
             return true
             
         case .git, .me, .noOp, .unpair:
@@ -317,7 +317,7 @@ class Policy {
 extension Request {
     var authorizeCategoryIdentifier:String {
         switch self.body {
-        case .createTeam, .me, .unpair, .noOp:
+        case .adminKey, .createTeam, .me, .unpair, .noOp:
             return ""
             
         case .ssh, .git:
@@ -327,7 +327,7 @@ extension Request {
     
     var autoAuthorizeCategoryIdentifier:String {
         switch self.body {
-        case .createTeam, .me, .unpair, .noOp:
+        case .adminKey, .createTeam, .me, .unpair, .noOp:
             return ""
             
         case .ssh, .git:
